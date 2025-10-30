@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ "main" ]   # Runs when you push to main branch
+    branches: [ "main" ]
 
 jobs:
   backend:
@@ -17,7 +17,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build backend
-        run: cd backend && mvn clean install -DskipTests
+        run: mvn clean install -DskipTests
 
       - name: Test backend
-        run: cd backend && mvn test
+        run: mvn test
